@@ -21,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       <AuroraBackground></AuroraBackground>
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
