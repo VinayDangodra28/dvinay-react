@@ -178,6 +178,8 @@ button {
     justify-content: center;
     font-size: 2.5rem;
     transition: transform 0.25s ease;
+    
+    text-align: center;
 }
 
 .skills-list {
@@ -209,7 +211,7 @@ button {
     background-image: linear-gradient(315deg, #FF1493, #008080);
 }
 
-#database{
+#other{
     background-image: linear-gradient(315deg, #2F4F4F, #708090);
 }
 
@@ -220,8 +222,7 @@ button {
     width: 40vw;
     height: 70vh;
     background-color: black;
-    display: flex
-;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -230,18 +231,55 @@ button {
 
 .sub-skill-card {
     font-size: 1rem;
-    padding: 20px;
+    background-color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 25px;
+    cursor: pointer;
 }
 
+.sub-skill-card:hover {
+    border: 1px solid black;
+}
 
 .sub-skills {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
+.subskill-description {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px;
+}
 
+.subskill-description .section {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: grey;
+    border-radius: 20px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
 
-
+.subskill-description .section p {
+    text-align: center;
+}
+h3.subskill-title {
+    font-size: 3rem;
+    text-align: center;
+}
+.subskill-description .section h4 {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 500;
+}
 
 
 
@@ -249,7 +287,7 @@ button {
 
 .education-section-wrapper {
     position: relative;
-    height: 200vh;
+    /* height: 200vh; */
     width: 100%;
     /* padding: 20px; */
     padding-bottom: 0px;
@@ -328,12 +366,13 @@ button {
 
 .work-section-wrapper {
     position: relative;
-    height: 200vh;
+    /* height: 200vh; */
     width: 100%;
     /* padding: 20px; */
     padding-bottom: 0px;
     padding-top: 0px;
-
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .work-frame{
@@ -353,6 +392,51 @@ button {
     border-radius: 0px 0px 0px 0px;
     transform-origin: bottom;
 }
+.work-row {
+    display: flex;
+    height: 30vh;
+}
+
+#graphic-work {
+    width: 60%;
+    border-left: 0px;
+}
+
+#web-work {
+    width: 40%;
+    border-right: 0px;
+}
+
+#sketch-work {
+    width: 40%;
+    border-left: 0px;
+}
+
+#github-work {
+    width: 60%;
+    border-right: 0px;
+}
+
+.work-card {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .swiper-wrapper {
     height: 80vh !important;

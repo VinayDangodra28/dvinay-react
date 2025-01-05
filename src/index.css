@@ -6,3 +6,8 @@
     font-family: 'anzio';
     src: url(./assets/fonts/file.woff2) format('woff2');
 }
+
+.about {
+    z-index: 4;
+    position: relative;
+}

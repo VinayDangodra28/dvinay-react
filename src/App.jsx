@@ -12,19 +12,24 @@ function App() {
   const location = useLocation();
 
   const pageVariants = {
-    initial: { opacity: 1 },
-    in: { opacity: 1 },
-    out: { opacity: 1, }
+    initial: { opacity: 0 },  // Start fully transparent
+    in: { opacity: 1 },       // Fade in to fully visible
+    out: { opacity: 0 },      // Fade out to transparent
   };
 
-  const pageTransition = { type: 'tween', ease: 'anticipate', duration: 0.2 };
+  const pageTransition = {
+    type: "tween",
+    ease: "easeInOut",
+    duration: 1, // Adjust this for smoothness
+  };
 
   return (
     <div className="App">
-      {/* <Header /> */}
-      <AuroraBackground></AuroraBackground>
+      <Header />
+      <AuroraBackground />
       <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
+        {/* Use location.key for animations */}
+        <Routes location={location} key={location.key}>
           <Route
             path="/"
             element={
@@ -53,8 +58,6 @@ function App() {
               </motion.div>
             }
           />
-
-
           <Route
             path="/maze"
             element={
@@ -69,32 +72,13 @@ function App() {
               </motion.div>
             }
           />
-
-
-
-
-          <Route
-            path="/background"
-            element={
-              <motion.div
-                variants={pageVariants}
-                initial="initial"
-                animate="in"
-                exit="out"
-                transition={pageTransition}
-              >
-                {/* <WhiteBackground /> */}
-              </motion.div>
-            }
-          />
-
-
-
         </Routes>
       </AnimatePresence>
     </div>
   );
 }
+
+
 
 function AppWrapper() {
   return (

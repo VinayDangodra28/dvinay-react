@@ -18,8 +18,8 @@
       rgba(41, 74, 50, 0.02) 60%
     );
     animation: aurora-animation 10s ease-in-out infinite alternate;
-    filter: blur(100px);
-    opacity: 0.8;
+    filter: blur(70px);
+    opacity: 1;
   }
   
   .aurora:nth-child(2) {
