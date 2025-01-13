@@ -49,7 +49,7 @@ export const Banner = () => {
                         Vinay Dangodra
                     </h1>
                     <span>
-                        -Full Stack Developer
+                        -The Multiverse of Me
                     </span>
                 </div>
             </div>

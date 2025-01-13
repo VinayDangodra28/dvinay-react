@@ -16,6 +16,33 @@ function Home() {
     gsap.registerPlugin(ScrollTrigger);
 
     const timelines = [];
+    const svg = document.querySelector('.svg-path-container svg');
+    const path = svg.querySelector('path');
+    const pathLength = path.getTotalLength();
+
+    gsap.set(path, { strokeDasharray: pathLength });
+
+    gsap.fromTo(
+      path,
+      {
+        strokeDashoffset: pathLength,
+      },
+      {
+        strokeDashoffset: 0,
+        // duration: 3,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: svg,
+          start: 'top bottom',
+          end: 'bottom bottom',
+          scrub: true,
+          invalidateOnRefresh: true,
+          // markers: true,
+        },
+      }
+    );
+
+
 
     const initializeTimelines = () => {
 
@@ -34,13 +61,15 @@ function Home() {
           '.moving-screen',
           {
             transformOrigin: 'left 10%',
+            opacity: 0,
             transform: 'rotateY(0deg) translateX(calc(17.5vw - 2.5rem))',
-            
+
           },
           {
             transformOrigin: 'left 10%',
-            transform: 'rotateY(5deg) translateX(0px)', 
+            transform: 'rotateY(5deg) translateX(0px)',
             duration: 1,
+            opacity: 1,
           }
         )
       );
@@ -105,7 +134,7 @@ function Home() {
           },
         }).to('.moving-screen', {
           transformOrigin: 'right bottom',
-          transform: 'rotateY(-10deg) translateX(calc(30vw - 2.5rem))',
+          transform: 'rotateY(0deg) translateX(calc(17.5vw - 2.5rem))',
           duration: 1,
         })
       );
@@ -125,7 +154,7 @@ function Home() {
         })
       );
 
-      
+
       timelines.push(
         gsap.timeline({
           scrollTrigger: {
@@ -169,16 +198,28 @@ function Home() {
     <div className='homepage'>
       <Banner />
       <div className='moving-screen-wrapper p-5'>
+
         <div className='moving-screen'>
           <Skills />
           <Education />
           <Work />
           <Contact />
         </div>
+        <div className='svg-path-container'>
+        <svg viewBox="0 0 1002 2553" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path 
+          d="M949.874 1C949.874 1 1064.87 68 949.874 195C834.874 322 134.392 129.5 16.8914 371.5C-100.609 613.5 472.027 650.5 472.027 755.5C472.027 860.5 472.027 1296 472.027 1356C472.027 1416 243.391 1442 73.3907 1582.5C-96.6093 1723 217.891 2552.5 217.891 2552.5" 
+          stroke="#126019" 
+          strokeWidth={3}
+          />
+        </svg>
+
+        </div>
+
       </div>
-      <div style={{ height: '100vh' , position: 'relative' }}>
-        
-      <MazeGame />
+      <div style={{ height: '100vh', position: 'relative' }}>
+
+        <MazeGame />
       </div>
     </div>
   );

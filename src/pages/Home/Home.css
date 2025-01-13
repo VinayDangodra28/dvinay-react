@@ -62,8 +62,24 @@ button {
 }
   
 
-
-
+.svg-path-container{
+    position: absolute;
+    top: 4.5%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+.svg-path-container svg {
+    width: 90%;
+    filter: drop-shadow(0px 0px 10px #88CE3B);
+    margin-left: 1%;
+    pointer-events: none;
+}
 .logo {
     width: 500px;
     height: 500px;
@@ -156,8 +172,9 @@ button {
 
 .section-title {
     text-align: center;
-    font-size: 5rem;
-    margin-bottom: 50px;
+    font-size: 4rem;
+    margin-bottom: 50px;  
+    font-family: neuropool;
 }
 
 .skill-wrapper {
@@ -221,13 +238,21 @@ button {
     left: 60vw;
     width: 40vw;
     height: 70vh;
-    background-color: black;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
 }
+
+.skill-title {
+    color: white;
+    font-family: 'neuropool';
+}
+
 
 .sub-skill-card {
     font-size: 1rem;
@@ -334,7 +359,7 @@ h3.subskill-title {
     gap: 50px;
 }
 .qualification {
-    width: 85%;
+    width: 65%;
     padding: 20px;
     border: 1px solid white;
     border-radius: 20px;
@@ -343,16 +368,58 @@ h3.subskill-title {
 .qualifications-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
     gap: 20px;
 }
 
 .certificates {
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.certificate{
+    width: 65%;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.certificates-list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
 }
 
+.qualifications-description {
+    position: absolute;
+    left: -12.5vw;
+    top: 50%;
+    width: 20vw;
+    height: 25%;
+    border: 1px solid white;
+    border-radius: 20px;
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
 
+.certificates-description {
+    height: 25%;
+    width: 20vw;
+    padding: 20px;
+    border: 1px solid white;
+    position: absolute;
+    right: -12.5vw;
+    top: 50%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 
@@ -398,12 +465,12 @@ h3.subskill-title {
 }
 
 #graphic-work {
-    width: 60%;
+    width: 40%;
     border-left: 0px;
 }
 
 #web-work {
-    width: 40%;
+    width: 60%;
     border-right: 0px;
 }
 
@@ -421,13 +488,62 @@ h3.subskill-title {
     font-size: 2rem;
     display: flex;
     align-items: center;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Circle styles */
+.circle {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.work-card:hover .circle {
+    opacity: 1; /* Smoothly transition to opacity: 1 */
+    transition: opacity 0.5s ease; /* Ensure transition applies for this state */
+}
+
+.work-card .inner-box{
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border-radius: 0px;
+    background: rgba(255, 255, 255, 0.25)
+}
+
+/* To ensure immediate disappearance */
+.circle {
+    opacity: 0;
+    transition: opacity 0s; /* No transition for opacity going back to 0 */
+}
+
+#graphic-work .circle{
+    background: radial-gradient(#008080, transparent , transparent);
 }
 
 
+#web-work .circle{
+    background: radial-gradient(#FF6F61, transparent , transparent);
+}
 
 
+#sketch-work .circle{
+    background: radial-gradient(#D3D3D3, transparent , transparent);
+}
+
+
+#github-work .circle{
+    background: radial-gradient(#4B0082, transparent , transparent);
+}
 
 
 
@@ -467,7 +583,7 @@ h3.subskill-title {
 
 .contact-section-wrapper {
     position: relative;
-    height: 200vh;
+    /* height: 200vh; */
     width: 100%;
     /* padding: 20px; */
     padding-bottom: 0px;
@@ -488,4 +604,30 @@ h3.subskill-title {
     height: 100%;
     border-radius: 0px 0px 20px 20px;
     transform-origin: bottom;
+}
+
+input {
+    background: transparent;
+    color: white;
+    font-size: 3rem;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 20px;
+    width: 80%;
+}
+
+textarea {
+    font-size: 3rem;
+    padding: 20px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 80%;
+}
+
+form.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
 }

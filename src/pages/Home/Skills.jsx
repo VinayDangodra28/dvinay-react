@@ -156,12 +156,14 @@ export const Skills = () => {
     <div className="skills-section-wrapper">
       <div className="skills-frame">
         <div className="skills-section a_section">
-          <h2 className="skills-title section-title">Skills</h2>
+          <h2 className="skills-title section-title">The Variants of Me</h2>
           <div className="skills-list">
             {Object.keys(skillsData).map((key) => (
               <div className="skill-wrapper" key={key}>
                 <div className="skill" id={key}>
+                  <div className='skill-title'>
                   {skillsData[key].title}
+                  </div>
                   <div className="sub-skills">
                     {skillsData[key].subSkills.map((subSkill, index) => (
                       <div
