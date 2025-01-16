@@ -74,7 +74,7 @@
   background-color: rgb(255 255 255 / 10%);
   backdrop-filter: blur(18px);
   width: 90vw;
-  height: 10vw;
+  height: 20vw;
 }
 #maze td {
   height: 20px;
